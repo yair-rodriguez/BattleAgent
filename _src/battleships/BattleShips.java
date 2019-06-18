@@ -4,15 +4,15 @@
  * and open the template in the editor.
  */
 package battleships;
-
-import formBattle.VentanaTabla;
-import java.util.Scanner;
+import java.util.*;
 
 /**
  *
- * @author REYNALDO GV
+ * @author omarodriguez
  */
+
 public class BattleShips {
+    
     public static int numRows = 10;
     public static int numCols = 10;
     public static int playerShips;
@@ -21,8 +21,7 @@ public class BattleShips {
     public static int[][] missedGuesses = new int[numRows][numCols];
 
     public static void main(String[] args){
-        VentanaTabla miVentana=new VentanaTabla();
-		miVentana.setVisible(true);
+        // TODO code application logic here
         System.out.println("**** Welcome to Battle Ships game ****");
         System.out.println("Right now, sea is empty\n");
 
@@ -226,4 +225,3 @@ public class BattleShips {
         System.out.println();
     }
 }
-
