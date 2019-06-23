@@ -22,10 +22,17 @@ public class AgentSendTwo extends Agent {
         addBehaviour(new TickerBehaviour(this, 10000){
             @Override
             protected void onTick(){
-                ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
+                /* ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
                 mensaje.setContent(String.valueOf(ChangingButton2.coordenada));
                 mensaje.addReceiver(new AID("j2",AID.ISLOCALNAME));
+                send(mensaje); */
+                ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
+                AID r = new AID("j2", AID.ISGUID);
+                r.addAddresses("http://192.168.43.211:1099/JADE"); //IP Reyanldo Starbucks
+                mensaje.addReceiver(r);
+                mensaje.setContent(String.valueOf(ChangingButton2.coordenada));
                 send(mensaje);
+                System.out.println(mensaje);
             }
         });
         /*addBehaviour(new OneShotBehaviour(this) {
