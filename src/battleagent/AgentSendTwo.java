@@ -27,8 +27,9 @@ public class AgentSendTwo extends Agent {
                 mensaje.addReceiver(new AID("j2",AID.ISLOCALNAME));
                 send(mensaje); */
                 ACLMessage mensaje = new ACLMessage(ACLMessage.INFORM);
-                AID r = new AID("j2", AID.ISGUID);
-                r.addAddresses("http://192.168.43.211:1099/JADE"); //IP Reyanldo Starbucks
+                //Se envía el entorno del agente JADE y ACC del jugador2
+                AID r = new AID("j2@192.168.43.233:1099/JADE", AID.ISGUID);
+                r.addAddresses("http://192.168.43.233:7778/acc"); 
                 mensaje.addReceiver(r);
                 mensaje.setContent(String.valueOf(ChangingButton2.coordenada));
                 send(mensaje);
