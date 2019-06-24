@@ -15,7 +15,7 @@ import jade.lang.acl.ACLMessage;
 import java.util.Arrays;
 import javax.swing.JButton;
 public class AgentReceptor extends Agent {
-    private final int[][] fModel = ChangingButton2.modelo;
+    //private final int[][] fModel = ChangingButton2.modelo;
 
     public String mensajeReceive = "";
      @Override
@@ -28,30 +28,31 @@ public class AgentReceptor extends Agent {
                 {
 
                     mensajeReceive = mensaje.getContent();
-                    //System.out.println(String.valueOf(ChangingButton.positionx));
+                    String[] coordenadas = mensajeReceive.split(",");
+                    
+                    System.out.println((String.valueOf(BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])])));
+                    //System.out.p............................................................................................................................................................................................................................rintln(String.valueOf(ChangingButton.positionx));
 
-                    if("1".equals(String.valueOf(BattleAgent.modelo2[ChangingButton.positionx][ChangingButton.positiony])))
+                    if("1".equals(String.valueOf(BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])])))
                     {
                         System.out.println("Eliminado Barco 1");
-                        BattleAgent.buttonJ1.setText("ELIMINADO1");
+                        //BattleAgent.buttonJ1.setText("ELIMINADO1");
                         BattleAgent.button1.setText("ELIMINADO");
-
-                       BattleAgent.modelo2[ChangingButton.positionx][ChangingButton.positiony] = 0;
+                        BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])] = 0;
                     }else{
-                        if("2".equals(String.valueOf(BattleAgent.modelo2[ChangingButton.positionx][ChangingButton.positiony])))
+                        if("2".equals(String.valueOf(BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])])))
                         {
                             System.out.println("Eliminado Barco 2");
-                              BattleAgent.buttonJ2.setText("ELIMINADO1");
-                        BattleAgent.button2.setText("ELIMINADO");
-                            BattleAgent.modelo2[ChangingButton.positionx][ChangingButton.positiony] = 0;
+                              //BattleAgent.buttonJ2.setText("ELIMINADO1");
+                            BattleAgent.button2.setText("ELIMINADO");
+                            BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])] = 0;
                         }else{
-                            if("3".equals(String.valueOf(BattleAgent.modelo2[ChangingButton.positionx][ChangingButton.positiony])))
+                            if("3".equals(String.valueOf(BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])])))
                             {
                                 System.out.println("Eliminado Barco 3");
-                                BattleAgent.buttonJ3.setText("ELIMINADO1");
+                                //BattleAgent.buttonJ3.setText("ELIMINADO1");
                                 BattleAgent.button3.setText("ELIMINADO");
-                                BattleAgent.modelo2[ChangingButton.positionx][ChangingButton.positiony] = 0;
-
+                                BattleAgent.modelo1[Integer.parseInt(coordenadas[0])][Integer.parseInt(coordenadas[1])] = 0;
                             }
                         }
                     }

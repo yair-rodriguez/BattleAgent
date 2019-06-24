@@ -35,7 +35,7 @@ public class BattleAgent {
         int segundo_barco = random.nextInt(10);
         int tercer_barco = random.nextInt(10);
 
-         modelo1 = matrix;
+        modelo1 = matrix;
         JFrame f = new JFrame("BattleShip ONE");
         JPanel p = new JPanel();
         p.setLayout(new GridLayout(dim, dim));
@@ -70,7 +70,7 @@ public class BattleAgent {
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
     }
     
-    public static void createBattle2(){
+    /*public static void createBattle2(){
          Random random = new Random();
         int dim=10;
         int matrix[][] = new int[10][10];
@@ -110,13 +110,13 @@ public class BattleAgent {
         f.pack();
         f.setVisible(true);
         f.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);   
-    }
+    }*/
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
         // TODO code application logic here
         createBattle();
-        createBattle2();
+        //createBattle2();
     } 
 }
